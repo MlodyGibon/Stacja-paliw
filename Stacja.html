@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacja Paliw</title>
+</head>
+<body>
+    <div id="A" class="C">
+        <h1>Stacja Paliw</h1>
+        <div>
+            <h3>Wybierz rodzaj wachy</h3>
+        </div>
+    </div>
+    <div>
+        <input type="radio" id="benzyna" name="tank" value="paliwo">
+        <label for="benzyna">Benzyna</label>
+        <input type="radio" id="ropa" name="tank" value="paliwo">
+        <label for="ropa"> Ropa </label>
+    </div>
+    <div>
+        <p>Wpisz ile litrów zostalo zatankowane:</p>
+        <input type="text" id="litry">
+        <div>
+        <button onclick="oblicz()">oblicz</button>
+    </div>
+        <p>Cena wynosi:</p>
+        <p id="wynik"></p>
+    </div>
+
+</div>  
+<script>
+    function oblicz() {
+
+var Paliwo = document.getElementById("litry").value;
+let R = document.getElementById("ropa").checked;
+let B = document.getElementById("benzyna").checked;
+if (R == true) {
+    let cena = Paliwo * 7.5;
+    document.getElementById("wynik").innerHTML = cena;
+}
+else if (B == true) {
+    let cena = Paliwo * 6.7;
+    document.getElementById("wynik").innerHTML = cena;
+}
+    }
+</script>    
+
+</body>
+
+</html>
